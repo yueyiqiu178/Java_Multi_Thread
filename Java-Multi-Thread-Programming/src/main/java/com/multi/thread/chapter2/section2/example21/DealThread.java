@@ -26,9 +26,10 @@ public class DealThread implements Runnable {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            synchronized (lock2) {
-                System.out.println("按lock1->lock2代码顺序执行");
+                
+                synchronized (lock2) {
+                    System.out.println("按lock1->lock2代码顺序执行");
+                }
             }
         }
 
@@ -40,9 +41,10 @@ public class DealThread implements Runnable {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            synchronized (lock1) {
-                System.out.println("按lock2->lock1代码顺序执行");
+                
+                synchronized (lock1) {
+                    System.out.println("按lock2->lock1代码顺序执行");
+                }
             }
         }
     }
