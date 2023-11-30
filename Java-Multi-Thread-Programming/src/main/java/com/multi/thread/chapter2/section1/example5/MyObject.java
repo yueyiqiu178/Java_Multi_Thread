@@ -7,7 +7,7 @@ package com.multi.thread.chapter2.section1.example5;
  */
 public class MyObject {
 
-    public synchronized void methodA() {
+	synchronized public void methodA() {
         try {
             System.out.println("begin methodA threadName = " + Thread.currentThread().getName());
             Thread.sleep(5000);
@@ -17,7 +17,7 @@ public class MyObject {
         }
     }
 
-    public synchronized void methodB() {
+	synchronized public void methodB() {
         try {
             System.out.println("begin methodB threadName = " + Thread.currentThread().getName() + " begin time = " + System.currentTimeMillis());
             Thread.sleep(5000);
