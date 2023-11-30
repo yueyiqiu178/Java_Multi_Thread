@@ -17,9 +17,11 @@ public class Service {
 					System.out.println("ThreadName = " + Thread.currentThread().getName() + " run exceptionTime = "
 							+ System.currentTimeMillis());
 					Integer.parseInt("a");
-				} else {
-					System.out.println("Thread B run time = " + System.currentTimeMillis());
 				}
+//				else {
+//					System.out.println("ThreadName = " + Thread.currentThread().getName() + " run ok = "
+//							+ System.currentTimeMillis());
+//				}
 			}
 		} else {
 			System.out.println("Thread B run Time=" + System.currentTimeMillis());
