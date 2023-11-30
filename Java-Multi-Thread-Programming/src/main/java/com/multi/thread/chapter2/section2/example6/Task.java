@@ -7,13 +7,15 @@ package com.multi.thread.chapter2.section2.example6;
  */
 public class Task {
 
-    public synchronized void otherMethod() {
+	synchronized public void otherMethod() {
         System.out.println("----------------------run------------otherMethod");
     }
 
     public synchronized void doLongTimeTask() {
-        for (int i = 0; i < 10000; i++) {
-            System.out.println("synchronized threadName = " + Thread.currentThread().getName() + " i = " + (i + 1));
-        }
+    	synchronized(this) {
+	        for (int i = 0; i < 10000; i++) {
+	            System.out.println("synchronized threadName = " + Thread.currentThread().getName() + " i = " + (i + 1));
+	        }
+    	}
     }
 }
