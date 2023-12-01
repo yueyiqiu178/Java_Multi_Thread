@@ -15,21 +15,16 @@ public class C {
 
     public void getValue() {
         try {
-        	while(true) {
-        		System.out.println("消费者 synchronized "+ Thread.currentThread().getName());
-	            synchronized (lock) {
-	                while (ValueObject.value.equals("")) {
-	                    System.out.println("消费者 " + Thread.currentThread().getName() + " waiting 了$");
-	                    lock.wait();
-	                }
-	                System.out.println("消费者 " + Thread.currentThread().getName() + " runnable 了");
-	                ValueObject.value = "";
-	                lock.notify();
-	                //lock.notifyAll();
-	                System.out.println("消费者 End synchronized "+ Thread.currentThread().getName());
-	            }
-	            System.out.println("消费者 End while "+ Thread.currentThread().getName());
-        	}
+            synchronized (lock) {
+                while (ValueObject.value.equals("")) {
+                    System.out.println("消费者 " + Thread.currentThread().getName() + "waiting了$");
+                    lock.wait();
+                }
+                System.out.println("消费者 " + Thread.currentThread().getName() + "runnable了");
+                ValueObject.value = "";
+                //lock.notify();
+                lock.notifyAll();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
