@@ -15,8 +15,8 @@ public class ThreadP extends Thread {
 
     @Override
     public void run() {
-        while (true) {
+        //while (true) {
             p.setValue();
-        }
+        //}
     }
 }
