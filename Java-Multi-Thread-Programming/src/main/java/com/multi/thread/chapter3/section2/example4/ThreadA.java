@@ -19,6 +19,7 @@ public class ThreadA extends Thread {
             synchronized (b) {
                 b.start();
                 b.join();
+                //Thread.sleep(6000);
                 for (int i = 0; i < Integer.MAX_VALUE; i++) {
                     String newString = new String();
                     Math.random();
